@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Photo Bongo – Online Editor</title>
+<style>
+    body { margin:0; padding:0; }
+    iframe { width:100vw; height:100vh; border:0; }
+</style>
+</head>
+<body>
+
+<script>
+const config = {
+    files: [
+        "https://yourdomain.com/templates/your-template.psd"
+    ],
+    resources: [
+        "https://yourdomain.com/resources/CustomFont.otf"
+    ],
+    server: {
+        version: 1,
+        url: "https://yourdomain.com/saveImage.php",
+        formats: ["psd:true", "png"]
+    },
+    script: "app.echoToOE('Welcome to Photo Bongo!');"
+};
+
+const url = "https://www.photopea.com#" + encodeURIComponent(JSON.stringify(config));
+
+document.write('<iframe src="' + url + '"></iframe>');
+</script>
+
+</body>
+</html>
